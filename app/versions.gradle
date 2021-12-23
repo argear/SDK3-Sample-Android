@@ -1,0 +1,15 @@
+ext {
+    compile_sdkVersion = 29
+    min_sdkVersion = 23
+    target_sdkVersion = 29
+
+    appcompactVersion = "1.1.0"
+    coreKtxVersion = "1.1.0"
+    constraintLayoutVersion = "2.1.2"
+    recyclerviewVersion = "1.2.1"
+    lifecycleExtensionsVersion = "2.2.0-rc02"
+    glideVersion = "3.7.0"
+    retrofitVersion = "2.4.0"
+    okhttpLoggingInterceptorVersion = "3.10.0"
+    gsonVersion = "2.8.6"
+}
