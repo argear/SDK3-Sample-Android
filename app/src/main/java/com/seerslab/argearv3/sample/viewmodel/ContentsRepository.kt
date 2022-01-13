@@ -35,12 +35,12 @@ class ContentsRepository {
         val categories = ArrayList<CategoryModel>()
         for (category in humanAR.contentCategory) {
             val items = ArrayList<ItemModel>()
-            for (arcontentInfo in humanAR.getContentList(category, 0, 100)) {
+            for (contentInfo in humanAR.getContentList(category.first, 0, 100)) {
                 items.add(
                     ItemModel(
-                        arcontentInfo.uuid,
+                        contentInfo.uuid,
                         "", "",
-                        arcontentInfo.thumbnailUri, arcontentInfo.contentUri,
+                        contentInfo.thumbnailUri, contentInfo.contentUri,
                         0, 0, 0, 0, 0,
                         false, "", 0, ""
                     )
@@ -48,7 +48,7 @@ class ContentsRepository {
             }
             categories.add(
                 CategoryModel(
-                    category, "3D Sticker",
+                    category.first, category.second,
                     "", false, 0, "", items
                 )
             )

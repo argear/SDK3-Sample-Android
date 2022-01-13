@@ -284,17 +284,18 @@ class CameraActivity : AppCompatActivity() {
                 screenRenderer.draw(mARGFrame.textureId, localWidth, localHeight)
             }
 
-            if (currentSelectedStickerItem == null) {
+            val drawItem = currentSelectedStickerItem
+            if (drawItem == null) {
                 if (currentAppliedStickerItem != null) {
                     humanAR.cancelContent(currentAppliedStickerItem?.uuid)
                     currentAppliedStickerItem = null
                 }
             } else {
-                if (currentSelectedStickerItem?.uuid != currentAppliedStickerItem?.uuid) {
+                if (drawItem.uuid != currentAppliedStickerItem?.uuid) {
                     if (currentAppliedStickerItem != null)
                         humanAR.cancelContent(currentAppliedStickerItem?.uuid)
-                    humanAR.applyContent(currentSelectedStickerItem?.uuid)
-                    currentAppliedStickerItem = currentSelectedStickerItem
+                    humanAR.applyContent(drawItem.uuid)
+                    currentAppliedStickerItem = drawItem
                 }
             }
         }
